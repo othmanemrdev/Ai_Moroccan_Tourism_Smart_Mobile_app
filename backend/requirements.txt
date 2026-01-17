@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+google-generativeai
+python-dotenv
+<<<<<<< HEAD
+supabase
+tensorflow
+pillow
+=======
+supabase
+>>>>>>> a3ee2d642313047e3104f22ed8ad1d795e967dcc

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarocGuide AI - Cost Estimator</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+        .container { border: 2px solid #C1272D; padding: 20px; border-radius: 10px; }
+        h1 { color: #C1272D; text-align: center; }
+        input { margin: 20px 0; }
+        button { background: #006233; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        #result { margin-top: 30px; white-space: pre-wrap; background: #f4f4f4; padding: 15px; border-radius: 5px; display: none; }
+        .loader { display: none; color: #006233; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇲🇦 Cost Estimator</h1>
+        <p>Estimate fair prices for items in Morocco.</p>
+        
+        <input type="text" id="itemInput" placeholder="Enter item (e.g., tagine, taxi ride)">
+        <input type="text" id="locationInput" placeholder="Enter location (e.g., Marrakech, Casablanca)">
+        <button onclick="estimateCost()">Estimate Cost</button>
+        
+        <p class="loader" id="loader">Estimating... Please wait.</p>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function estimateCost() {
+            const itemInput = document.getElementById('itemInput');
+            const locationInput = document.getElementById('locationInput');
+            const resultDiv = document.getElementById('result');
+            const loader = document.getElementById('loader');
+
+            if (itemInput.value.trim() === '' || locationInput.value.trim() === '') {
+                alert("Please fill in both item and location!");
+                return;
+            }
+
+            const data = {
+                item: itemInput.value.trim(),
+                location: locationInput.value.trim()
+            };
+
+            loader.style.display = "block";
+            resultDiv.style.display = "none";
+
+            try {
+                const response = await fetch("/estimate-cost", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                
+                loader.style.display = "none";
+                resultDiv.style.display = "block";
+                
+                resultDiv.innerText = `Cost Estimate:\n${JSON.stringify(result, null, 2)}`;
+            } catch (error) {
+                loader.style.display = "none";
+                resultDiv.innerText = "Failed to connect to backend: " + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
