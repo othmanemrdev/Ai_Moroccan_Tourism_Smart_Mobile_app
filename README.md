@@ -17,6 +17,8 @@
 
 ---
 
+This project was the result of a collaboration with my friend FAHD EL ATTAR, and as we always say, with Zorbladi everything is superb.
+
 ## 🌟 Overview
 
 **MarocGuide AI** is a cutting-edge mobile application that revolutionizes how tourists and locals explore Morocco. Powered by advanced AI and machine learning, the app provides instant recognition of Moroccan food and monuments, personalized travel itineraries, real-time translation to Darija (Moroccan Arabic), and smart cost estimation.
