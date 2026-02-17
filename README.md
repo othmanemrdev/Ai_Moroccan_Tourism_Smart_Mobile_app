@@ -445,7 +445,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 👥 Authors & Acknowledgments
 
 ### Development Team
-- **Othmane** - *Lead Developer* - [@othmanemrdev](https://github.com/othmanemrdev)
+- **FAHD** - [@fahdElattar](https://github.com/fahdElattar)
+- **Othmane** - [@othmanemrdev](https://github.com/othmanemrdev)
+
 
 ### Special Thanks
 - Google Gemini AI team for the powerful AI capabilities
@@ -458,7 +460,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 📞 Contact & Support
 
 - **GitHub Issues**: [Report bugs or request features](https://github.com/othmanemrdev/Ai_Moroccan_Tourism_Smart_Mobile_app/issues)
-- **Email**: [Your contact email]
 - **Documentation**: See [SETUP_GUIDE.md](SETUP_GUIDE.md) for detailed setup instructions
 
 ---
